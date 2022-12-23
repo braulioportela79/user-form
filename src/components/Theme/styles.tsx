@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   height: 100vh;
   display: flex;
-  justify-content: flex-end;
-  align-items: right;
 `;
 
 export const Area = styled.div`

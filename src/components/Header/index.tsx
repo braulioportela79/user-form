@@ -1,4 +1,4 @@
-import { StyledTitle } from "../../styles/typograghy";
+import { StyledTitle } from "styles/typograghy";
 import * as S from "./styles";
 
 export const Header = () => {

@@ -1,8 +1,9 @@
 import styled, { css } from "styled-components";
-// import { ThemeColors } from "./global";
-import { BaseTitle } from "./components/base-title";
+import { BaseTitle } from "styles/components/base-title";
 
 export const StyledTitle = styled(BaseTitle)`
+  font-weight: ${({ fontWeight }) => fontWeight};
+
   ${({ fontSize }) => {
     switch (fontSize) {
       case "lg":

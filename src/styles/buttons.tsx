@@ -14,6 +14,7 @@ export const StyledButton = styled.button<iStyledButtonProps>`
     font-weight: 500;
   }
 
+  min-width: 9rem;
   color: ${({ theme }) => theme.colors.white};
   border-radius: 4px;
   padding: 0.6rem 0;

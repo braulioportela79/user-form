@@ -1,8 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import * as S from "./styles";
-import { Theme } from "../../components/Theme";
-import { StyledButton } from "../../styles/buttons";
+import { StyledButton } from "styles/buttons";
+import { Theme } from "components/Theme";
 
 export const FormStep1 = () => {
+  const navigate = useNavigate();
+  const handleNextStep = () => {
+    navigate("/step2");
+  };
+
   return (
     <Theme>
       <S.Form>
@@ -27,7 +33,12 @@ export const FormStep1 = () => {
           <input type="text" />
         </label>
       </S.Form>
-      <StyledButton fontSize="md" buttonColor="purple" buttonSize="sm">
+      <StyledButton
+        fontSize="md"
+        buttonColor="purple"
+        buttonSize="sm"
+        onClick={handleNextStep}
+      >
         <b>Próximo Passo</b>
       </StyledButton>
     </Theme>
