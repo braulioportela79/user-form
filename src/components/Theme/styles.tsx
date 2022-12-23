@@ -1,35 +1,39 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  /* background-color: #5357B1; */
-  /* color: #8C98A9; */
-  /* lightGray: '#F0F2F6',
-    darkGray: '#8C98A9',
-    purple: '#5357B1',
-    green: '#00AE63', */
-    /* margin: auto; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    height: 100vh;
-    background-color: blue;
-    display: flex;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: right;
 `;
 
 export const Area = styled.div`
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    /* padding: 20px; */
-    padding-left: 3.75rem;
-    padding-top: 3.5rem;
-    margin: auto;
-    width: 70vw;
-    height: 70vh;
-    background-color: red;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 3.5rem;
+  margin: auto;
+  width: 70vw;
+  height: 70vh;
+  border: 2px solid ${({ theme }) => theme.colors.lightGrey};
+  box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.colors.lightGrey};
 `;
 
-export const Steps = styled.div``;
+export const Wrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`;
 
-export const TopBar = styled.div``;
+export const Steps = styled.div`
+  margin-top: 3rem;
+  height: 50px;
+`;
 
-export const Page = styled.div``;
+export const Page = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+`;

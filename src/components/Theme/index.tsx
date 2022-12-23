@@ -11,10 +11,10 @@ export const Theme = ({ children }: Props) => {
     <S.Container>
       <S.Area>
         <Header />
-        <S.Steps>
-          <S.TopBar></S.TopBar>
+        <S.Wrapper>
+          <S.Steps>STEPS</S.Steps>
           <S.Page>{children}</S.Page>
-        </S.Steps>
+        </S.Wrapper>
       </S.Area>
     </S.Container>
   );
