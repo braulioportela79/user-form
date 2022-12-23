@@ -21,12 +21,9 @@ type State = {
   user: User;
 };
 
-export type Action = {
-  [Key in keyof State]: {
-    type: Key;
-    payload: State[Key];
-  };
-}[keyof State];
+export type Action =
+  | { type: FormActions.setCurrentStep; payload: number }
+  | { type: FormActions.setUser; payload: User };
 
 type ContextType = {
   state: State;
@@ -60,11 +57,16 @@ const initialState: State = {
 const FormContext = createContext<ContextType | undefined>(undefined);
 
 // Reducer
+export enum FormActions {
+  setCurrentStep,
+  setUser,
+}
+
 const formReducer = (state: State, action: Action) => {
   switch (action.type) {
-    case "currentStep":
+    case FormActions.setCurrentStep:
       return { ...state, currentStep: action.payload };
-    case "user":
+    case FormActions.setUser:
       return { ...state, user: action.payload };
     default:
       return state;
