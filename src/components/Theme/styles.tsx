@@ -9,10 +9,10 @@ export const Area = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  padding: 3rem 2rem;
+  padding: 2rem;
   margin: auto;
   width: 70vw;
-  height: 70vh;
+  /* height: 75vh; */
   border: 2px solid ${({ theme }) => theme.colors.lightGrey};
   box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.colors.lightGrey};
 `;
@@ -33,4 +33,5 @@ export const Page = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
 `;
