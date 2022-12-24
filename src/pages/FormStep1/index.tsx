@@ -87,14 +87,16 @@ export const FormStep1 = () => {
           <input type="text" />
         </label>
       </S.Form>
-      <StyledButton
-        fontSize="md"
-        buttonColor="purple"
-        buttonSize="sm"
-        onClick={handleNextStep}
-      >
-        <b>Próximo Passo</b>
-      </StyledButton>
+      <S.ButtonContainer>
+        <StyledButton
+          fontSize="md"
+          buttonColor="purple"
+          buttonSize="sm"
+          onClick={handleNextStep}
+        >
+          <b>Próximo Passo</b>
+        </StyledButton>
+      </S.ButtonContainer>
     </Theme>
   );
 };

@@ -1,14 +1,19 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Form = styled.form`
-  width: 100%;
-  margin-top: 20px;
+  flex: 1;
   display: grid;
   grid-template-areas:
     "name name"
     "password confirmPassword"
     "email birthDate";
-  grid-gap: 2rem;
+  grid-gap: 1rem;
+  
   #name {
     grid-area: name;
   }
@@ -36,10 +41,14 @@ export const Form = styled.form`
 
   input {
     width: 100%;
-    height: 2.75rem;
     border: none;
     border-radius: 4px;
     background-color: ${({ theme }) => theme.colors.lightGrey};
     padding: 0.5rem;
   }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
 `;
