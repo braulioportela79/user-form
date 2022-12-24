@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useReducer } from "react";
 
-type User = {
+export type User = {
   name: string;
   password: string;
   confirmPassword: string;
