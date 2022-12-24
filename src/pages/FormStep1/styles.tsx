@@ -7,7 +7,9 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   flex: 1;
-  display: grid;
+  /* display: grid; */
+  display: flex;
+  flex-direction: column;
   grid-template-areas:
     "name name"
     "password confirmPassword"
@@ -20,6 +22,9 @@ export const Form = styled.form`
 
   #password {
     grid-area: password;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
   }
 
   #confirmPassword {
@@ -37,6 +42,7 @@ export const Form = styled.form`
   label {
     font-weight: 500;
     color: ${({ theme }) => theme.colors.black};
+    width: 100%;
   }
 
   input {
@@ -47,6 +53,8 @@ export const Form = styled.form`
     padding: 0.5rem;
   }
 `;
+
+export const InputContainer = styled.div``;
 
 export const ButtonContainer = styled.div`
   display: flex;
