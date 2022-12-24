@@ -4,7 +4,8 @@ export const ThemeColors = {
   colors: {
     white: "#FFFFFF",
     black: "#000000",
-    lightGrey: "#c5c5c5",
+    grey: "#F0F2F6",
+    lightGrey: "#F8FAFB",
     darkGrey: "#8C98A9",
     purple: "#5357B1",
     green: "#00AE63",

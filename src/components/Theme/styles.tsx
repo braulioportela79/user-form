@@ -3,34 +3,30 @@ import styled from "styled-components";
 export const Container = styled.div`
   height: 100vh;
   display: flex;
+  background: linear-gradient(
+    to right,
+    ${({ theme }) => theme.colors.lightGrey} 0%,
+    ${({ theme }) => theme.colors.lightGrey} 50%,
+    ${({ theme }) => theme.colors.white} 50%,
+    ${({ theme }) => theme.colors.white}
+  );
 `;
 
 export const Area = styled.div`
-  display: flex;
-  flex-direction: column;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 3rem;
   margin: auto;
-  width: 70vw;
-  /* height: 75vh; */
-  border: 2px solid ${({ theme }) => theme.colors.lightGrey};
-  box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.colors.lightGrey};
-`;
-
-export const Wrapper = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  width: 60vw;
+  border: 2px solid ${({ theme }) => theme.colors.grey};
+  background-color: ${({ theme }) => theme.colors.white};
+  box-shadow: 0px 4px 31px ${({ theme }) => theme.colors.grey};
 `;
 
 export const Steps = styled.div`
-  /* height: 3rem; */
-  /* flex: 1; */
   background-color: orange;
 `;
 
 export const Page = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 2rem;
