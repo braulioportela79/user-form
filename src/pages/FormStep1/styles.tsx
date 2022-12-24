@@ -7,37 +7,10 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   flex: 1;
-  /* display: grid; */
   display: flex;
   flex-direction: column;
-  grid-template-areas:
-    "name name"
-    "password confirmPassword"
-    "email birthDate";
-  grid-gap: 1rem;
-  
-  #name {
-    grid-area: name;
-  }
-
-  #password {
-    grid-area: password;
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-
-  #confirmPassword {
-    grid-area: confirmPassword;
-  }
-
-  #email {
-    grid-area: email;
-  }
-
-  #birthDate {
-    grid-area: birthDate;
-  }
+  justify-content: center;
+  gap: 3rem;
 
   label {
     font-weight: 500;
@@ -54,7 +27,12 @@ export const Form = styled.form`
   }
 `;
 
-export const InputContainer = styled.div``;
+export const InputContainer = styled.div`
+  grid-area: password;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+`;
 
 export const ButtonContainer = styled.div`
   display: flex;

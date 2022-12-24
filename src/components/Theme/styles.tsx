@@ -9,10 +9,10 @@ export const Area = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 3rem 2rem;
   margin: auto;
   width: 70vw;
-  height: 75vh;
+  height: 70vh;
   border: 2px solid ${({ theme }) => theme.colors.lightGrey};
   box-shadow: 0px 0px 10px 5px ${({ theme }) => theme.colors.lightGrey};
 `;
@@ -24,7 +24,9 @@ export const Wrapper = styled.div`
 `;
 
 export const Steps = styled.div`
-  height: 3rem;
+  /* height: 3rem; */
+  /* flex: 1; */
+  background-color: orange;
 `;
 
 export const Page = styled.div`

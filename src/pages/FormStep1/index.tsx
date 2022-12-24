@@ -55,19 +55,17 @@ export const FormStep1 = () => {
   return (
     <Theme>
       <S.Form>
+        <label id="name">
+          Nome
+          <input
+            type="text"
+            value={state.user.name}
+            onChange={handleChange}
+            name="name"
+          />
+          {errors.name && <span>{errors.name}</span>}
+        </label>
         <S.InputContainer>
-          <label id="name">
-            Nome
-            <input
-              type="text"
-              value={state.user.name}
-              onChange={handleChange}
-              name="name"
-            />
-            {errors.name && <span>{errors.name}</span>}
-          </label>
-        </S.InputContainer>
-        <S.InputContainer id='password'>
           <label>
             Senha
             <input type="password" />
@@ -77,21 +75,21 @@ export const FormStep1 = () => {
             <input type="password" />
           </label>
         </S.InputContainer>
-        <S.InputContainer id='password'>
-        <label id="email">
-          Email
-          <input
-            type="email"
-            value={state.user.email}
-            onChange={handleChange}
-            name="email"
+        <S.InputContainer>
+          <label id="email">
+            Email
+            <input
+              type="email"
+              value={state.user.email}
+              onChange={handleChange}
+              name="email"
             />
-        </label>
-        <label id="birthDate">
-          Data de Nascimento
-          <input type="text" />
-        </label>
-            </S.InputContainer>
+          </label>
+          <label id="birthDate">
+            Data de Nascimento
+            <input type="text" />
+          </label>
+        </S.InputContainer>
       </S.Form>
       <S.ButtonContainer>
         <StyledButton
