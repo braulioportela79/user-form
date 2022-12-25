@@ -7,7 +7,15 @@ export const Form = styled.form`
   gap: 2rem;
   margin-top: 2rem;
 
+
+  span {
+    color: red;
+    font-size: 10px;
+  }
+
   label {
+    /* display: flex; */
+    /* flex-direction: column; */
     font-weight: 500;
     color: ${({ theme }) => theme.colors.black};
     width: 100%;

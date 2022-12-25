@@ -9,11 +9,11 @@ type Props = {
 export const Theme = ({ children }: Props) => {
   return (
     <S.Container>
-      <S.Area>
+      <S.Wrapper>
         <Header />
         <S.Steps>STEPS</S.Steps>
         <S.Page>{children}</S.Page>
-      </S.Area>
+      </S.Wrapper>
     </S.Container>
   );
 };

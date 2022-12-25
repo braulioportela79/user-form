@@ -12,9 +12,9 @@ export const Container = styled.div`
   );
 `;
 
-export const Area = styled.div`
+export const Wrapper = styled.div`
   border-radius: 8px;
-  padding: 3rem;
+  padding: 2.5rem;
   margin: auto;
   width: 60vw;
   border: 2px solid ${({ theme }) => theme.colors.grey};
@@ -29,5 +29,5 @@ export const Steps = styled.div`
 export const Page = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 `;
