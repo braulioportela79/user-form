@@ -48,7 +48,8 @@ export const useForm = (validate: { (state: User): User }) => {
       state.user.password &&
       state.user.password.length >= 6 &&
       state.user.confirmPassword &&
-      state.user.password === state.user.confirmPassword
+      state.user.password === state.user.confirmPassword &&
+      state.user.birthDate
     ) {
       isValid = true;
     } else {

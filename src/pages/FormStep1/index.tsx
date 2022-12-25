@@ -40,7 +40,8 @@ export const FormStep1 = () => {
             />
           </label>
           <label>
-            Confirmar Senha {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
+            Confirmar Senha{" "}
+            {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
             <input
               type="password"
               value={state.user.confirmPassword}
@@ -59,9 +60,14 @@ export const FormStep1 = () => {
               name="email"
             />
           </label>
-          <label id="birthDate">
-            Data de Nascimento
-            <input type="text" />
+          <label>
+            Data de Nascimento {errors.birthDate && <span>{errors.birthDate}</span>}
+            <input
+              type="date"
+              value={state.user.birthDate}
+              onChange={handleChange}
+              name="birthDate"
+            />
           </label>
         </S.InputContainer>
         <S.ButtonContainer>

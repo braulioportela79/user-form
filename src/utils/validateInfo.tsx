@@ -38,5 +38,9 @@ export const validateInfo = (state: User) => {
   } else if (state.confirmPassword !== state.password) {
     errors.confirmPassword = "Passwords do not match";
   }
+  if (!state.birthDate) {
+    errors.birthDate = "Birthdate is required";
+  }
+
   return errors;
 };
