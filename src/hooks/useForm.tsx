@@ -60,6 +60,7 @@ export const useForm = (validate: { (state: User): User }) => {
 
     if (
       state.user.address.zipCode &&
+      state.user.address.zipCode.length === 9 &&
       state.user.address.street &&
       state.user.address.number &&
       state.user.address.neighborhood &&
