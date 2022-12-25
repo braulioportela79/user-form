@@ -9,6 +9,7 @@ import { validateInfo } from "utils/validateInfo";
 export const FormStep1 = () => {
   const { errors, state, dispatch, handleChange, handleNextStep } =
     useForm(validateInfo);
+  const today = new Date().toISOString().split("T")[0];
 
   useEffect(() => {
     dispatch({
@@ -21,53 +22,69 @@ export const FormStep1 = () => {
     <Theme>
       <S.Form>
         <label>
-          Nome {errors.name && <span>{errors.name}</span>}
+          Nome
           <input
             type="text"
             value={state.user.name}
             onChange={handleChange}
             name="name"
           />
+          <S.Validation>
+            {errors.name && <span>{errors.name}</span>}
+          </S.Validation>
         </label>
         <S.InputContainer>
           <label>
-            Senha {errors.password && <span>{errors.password}</span>}
+            Senha
             <input
               type="password"
               value={state.user.password}
               onChange={handleChange}
               name="password"
             />
+            <S.Validation>
+              {errors.password && <span>{errors.password}</span>}
+            </S.Validation>
           </label>
           <label>
-            Confirmar Senha{" "}
-            {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
+            Confirmar Senha
             <input
               type="password"
               value={state.user.confirmPassword}
               onChange={handleChange}
               name="confirmPassword"
             />
+            <S.Validation>
+              {errors.confirmPassword && <span>{errors.confirmPassword}</span>}
+            </S.Validation>
           </label>
         </S.InputContainer>
         <S.InputContainer>
-          <label id="email">
-            Email {errors.email && <span>{errors.email}</span>}
+          <label>
+            Email
             <input
               type="email"
               value={state.user.email}
               onChange={handleChange}
               name="email"
             />
+            <S.Validation>
+              {errors.email && <span>{errors.email}</span>}
+            </S.Validation>
           </label>
           <label>
-            Data de Nascimento {errors.birthDate && <span>{errors.birthDate}</span>}
+            Data de Nascimento
             <input
               type="date"
               value={state.user.birthDate}
               onChange={handleChange}
               name="birthDate"
+              max={today}
+              placeholder="123"
             />
+            <S.Validation>
+              {errors.birthDate && <span>{errors.birthDate}</span>}
+            </S.Validation>
           </label>
         </S.InputContainer>
         <S.ButtonContainer>

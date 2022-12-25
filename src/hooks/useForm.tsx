@@ -29,37 +29,48 @@ export const useForm = (validate: { (state: User): User }) => {
       type: FormActions.setUser,
       payload: {
         ...state.user,
-        [name]: value,
+        [name]: value.replace(/\s{2,}/g, " "),
+        address: { ...state.user.address, [name]: value.replace(/\s{2,}/g, " ") },
       },
     });
 
     setErrors((oldErrors) => ({
       ...oldErrors,
       [name]: "",
+      address: { ...oldErrors.address, [name]: "" },
     }));
   };
 
   const handleNextStep = async (page: To) => {
-    let isValid = false;
     if (
       state.user.name &&
       state.user.email &&
-      /\S+@\S+\.\S+/.test(state.user.email) &&
+      /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(state.user.email) &&
       state.user.password &&
       state.user.password.length >= 6 &&
       state.user.confirmPassword &&
       state.user.password === state.user.confirmPassword &&
-      state.user.birthDate
+      state.user.birthDate &&
+      state.currentStep === 1
     ) {
-      isValid = true;
+      navigate(page);
     } else {
       setErrors(validate(state.user));
     }
 
-    if (isValid) {
+    if (
+      state.user.address.zipCode &&
+      state.user.address.street &&
+      state.user.address.number &&
+      state.user.address.neighborhood &&
+      state.user.address.city &&
+      state.user.address.reference &&
+      state.currentStep === 2
+    ) {
       navigate(page);
+    } else {
+      setErrors(validate(state.user));
     }
-    console.log(isValid);
   };
   return { errors, state, dispatch, handleChange, handleNextStep };
 };

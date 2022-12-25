@@ -1,7 +1,7 @@
 import { User } from "contexts/FormContext";
 
 export const validateInfo = (state: User) => {
-  let errors: User = {
+  const errors: User = {
     name: "",
     password: "",
     confirmPassword: "",
@@ -18,28 +18,57 @@ export const validateInfo = (state: User) => {
   };
 
   if (!state.name) {
-    errors.name = "Nome obrigatorio";
+    errors.name = "Este campo é obrigatório";
+  } else if (state.name.length < 3) {
+    errors.name = "Mínimo 3 caracteres";
   }
 
   if (!state.email) {
-    errors.email = "Email required";
-  } else if (!/\S+@\S+\.\S+/.test(state.email)) {
-    errors.email = "Email address is invalid";
+    errors.email = "Este campo é obrigatório";
+  } else if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(state.email)) {
+    errors.email = "Formato inválido";
   }
 
   if (!state.password) {
-    errors.password = "Password is required";
+    errors.password = "Este campo é obrigatório";
   } else if (state.password.length < 6) {
-    errors.password = "Password needs to be 6 characters or more";
+    errors.password = "Mínimo 6 caracteres";
   }
 
   if (!state.confirmPassword) {
-    errors.confirmPassword = "Password is required";
+    errors.confirmPassword = "Este campo é obrigatório";
   } else if (state.confirmPassword !== state.password) {
-    errors.confirmPassword = "Passwords do not match";
+    errors.confirmPassword = "Senhas não são iguais";
   }
+
   if (!state.birthDate) {
-    errors.birthDate = "Birthdate is required";
+    errors.birthDate = "Este campo é obrigatório";
+  }
+
+  if (!state.address.city) {
+    errors.address.city = "Este campo é obrigatório";
+  }
+
+  if (!state.address.zipCode) {
+    errors.address.zipCode = "Este campo é obrigatório";
+  } else if (state.address.zipCode.length < 9) {
+    errors.address.zipCode = "Formato inválido";
+  }
+
+  if (!state.address.street) {
+    errors.address.street = "Este campo é obrigatório";
+  }
+
+  if (!state.address.number) {
+    errors.address.number = "Este campo é obrigatório";
+  }
+
+  if (!state.address.neighborhood) {
+    errors.address.neighborhood = "Este campo é obrigatório";
+  }
+  
+  if (!state.address.reference) {
+    errors.address.reference = "Este campo é obrigatório";
   }
 
   return errors;
