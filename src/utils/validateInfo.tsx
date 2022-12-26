@@ -15,6 +15,7 @@ export const validateInfo = (state: User) => {
       city: "",
       reference: "",
     },
+    about: "",
   };
 
   if (!state.name) {
@@ -74,6 +75,12 @@ export const validateInfo = (state: User) => {
 
   if (!state.address.reference) {
     errors.address.reference = "Obrigatório";
+  }
+
+  if (!state.about) {
+    errors.about = "Obrigatório";
+  } else if (state.about.length < 50) {
+    errors.about = "Mínimo 50 caracteres";
   }
 
   return errors;

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import * as S from "./styles";
+import * as S from "styles/common";
 import { StyledButton } from "styles/buttons";
 import { Theme } from "components/Theme";
 import { useForm } from "hooks/useForm";

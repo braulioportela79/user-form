@@ -9,6 +9,7 @@ export const ThemeColors = {
     darkGrey: "#8C98A9",
     purple: "#5357B1",
     green: "#00AE63",
+    red: "#DD2323",
   },
 };
 
@@ -36,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
         list-style: none;
     }
 
-    input {
+    input, textarea {
 		outline: none;
 	}
 

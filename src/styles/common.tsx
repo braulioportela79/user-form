@@ -8,7 +8,7 @@ export const Form = styled.form`
   margin-top: 2rem;
 
   span {
-    color: red;
+    color: ${({ theme }) => theme.colors.red};
     font-size: 10px;
   }
 
@@ -18,6 +18,11 @@ export const Form = styled.form`
     width: 100%;
   }
 
+  #about {
+    display: flex;
+    flex-direction: column;
+  }
+
   input {
     width: 100%;
     border: none;
@@ -25,6 +30,25 @@ export const Form = styled.form`
     border-radius: 4px;
     background-color: ${({ theme }) => theme.colors.grey};
     padding: 0.5rem;
+  }
+
+  textarea {
+    height: 15.4rem;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+    background-color: ${({ theme }) => theme.colors.grey};
+    resize: none;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
   }
 `;
 
@@ -38,7 +62,14 @@ export const InputContainer = styled.div`
   gap: 2rem;
 `;
 
+export const InputWrapper = styled.div`
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+`;
+
 export const ButtonContainer = styled.div`
   display: flex;
   justify-content: flex-end;
+  gap: 1rem;
 `;

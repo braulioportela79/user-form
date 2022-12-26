@@ -14,6 +14,7 @@ export type User = {
     city: string;
     reference: string;
   };
+  about: string;
 };
 
 type State = {
@@ -50,6 +51,7 @@ const initialState: State = {
       city: "",
       reference: "",
     },
+    about: ""
   },
 };
 

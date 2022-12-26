@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import * as S from "./styles";
+import * as S from "styles/common";
 import { StyledButton } from "styles/buttons";
 import { Theme } from "components/Theme";
 import { useForm } from "hooks/useForm";
@@ -7,6 +7,8 @@ import { FormActions } from "contexts/FormContext";
 import { validateInfo } from "utils/validateInfo";
 import { useNavigate } from "react-router-dom";
 import { Input } from "components/InputMask";
+// import { KeyboardEvent } from "react";
+import { isNumberKey } from 'utils/masks';
 
 export const FormStep2 = () => {
   const { errors, state, dispatch, handleChange, handleNextStep } =
@@ -36,6 +38,7 @@ export const FormStep2 = () => {
               mask="zipCode"
               onChange={handleChange}
               value={state.user.address.zipCode}
+              onKeyDown={isNumberKey}
             />
             <S.Validation>
               {errors.address.zipCode && <span>{errors.address.zipCode}</span>}

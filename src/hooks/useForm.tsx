@@ -20,9 +20,12 @@ export const useForm = (validate: { (state: User): User }) => {
       city: "",
       reference: "",
     },
+    about: "",
   });
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
 
     dispatch({
@@ -30,7 +33,10 @@ export const useForm = (validate: { (state: User): User }) => {
       payload: {
         ...state.user,
         [name]: value.replace(/\s{2,}/g, " "),
-        address: { ...state.user.address, [name]: value.replace(/\s{2,}/g, " ") },
+        address: {
+          ...state.user.address,
+          [name]: value.replace(/\s{2,}/g, " "),
+        },
       },
     });
 
@@ -67,6 +73,16 @@ export const useForm = (validate: { (state: User): User }) => {
       state.user.address.city &&
       state.user.address.reference &&
       state.currentStep === 2
+    ) {
+      navigate(page);
+    } else {
+      setErrors(validate(state.user));
+    }
+
+    if (
+      state.user.about &&
+      state.user.about.length > 50 &&
+      state.currentStep === 3
     ) {
       navigate(page);
     } else {
