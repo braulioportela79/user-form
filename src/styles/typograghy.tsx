@@ -51,34 +51,3 @@ export const StyledParagraph = styled.p<iStyledParagraph>`
     }
   }}
 `;
-
-interface iStyledSpan {
-  fontSize: "lg" | "md" | "sm";
-  type: "validation";
-}
-
-export const StyledSpan = styled.span<iStyledSpan>`
-  font-weight: 400;
-
-  strong,
-  b {
-    font-weight: 700;
-  }
-
-  ${({ fontSize }) => {
-    switch (fontSize) {
-      case "lg":
-        return css`
-          font-size: 1.25rem;
-        `;
-      case "md":
-        return css`
-          font-size: 1rem;
-        `;
-      case "sm":
-        return css`
-          font-size: 0.75rem;
-        `;
-    }
-  }}
-`;
