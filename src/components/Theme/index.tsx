@@ -11,7 +11,7 @@ export const Theme = ({ children }: Props) => {
   return (
     <S.Container>
       <S.Wrapper>
-        <Header />
+        <Header>Criação de Usuário</Header>
         <S.Steps>
           <StepItem
             description="Identificação do usuário"

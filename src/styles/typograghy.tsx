@@ -16,7 +16,7 @@ export const StyledTitle = styled(BaseTitle)`
         `;
       case "sm":
         return css`
-          font-size: 0.75rem;
+          font-size: 1rem;
         `;
     }
   }}
