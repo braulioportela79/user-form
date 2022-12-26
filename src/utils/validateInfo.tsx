@@ -18,57 +18,62 @@ export const validateInfo = (state: User) => {
   };
 
   if (!state.name) {
-    errors.name = "Este campo é obrigatório";
+    errors.name = "Obrigatório";
   } else if (state.name.length < 3) {
     errors.name = "Mínimo 3 caracteres";
   }
 
   if (!state.email) {
-    errors.email = "Este campo é obrigatório";
+    errors.email = "Obrigatório";
   } else if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(state.email)) {
     errors.email = "Formato inválido";
   }
 
   if (!state.password) {
-    errors.password = "Este campo é obrigatório";
+    errors.password = "Obrigatório";
   } else if (state.password.length < 6) {
     errors.password = "Mínimo 6 caracteres";
   }
 
   if (!state.confirmPassword) {
-    errors.confirmPassword = "Este campo é obrigatório";
+    errors.confirmPassword = "Obrigatório";
   } else if (state.confirmPassword !== state.password) {
     errors.confirmPassword = "Senhas não são iguais";
   }
 
+  const d1 = Date.parse(new Date().toISOString().split("T")[0]);
+  const d2 = Date.parse(state.birthDate);
+
   if (!state.birthDate) {
-    errors.birthDate = "Este campo é obrigatório";
+    errors.birthDate = "Obrigatório";
+  } else if (d2 > d1) {
+    errors.birthDate = "Data inválida";
   }
 
   if (!state.address.city) {
-    errors.address.city = "Este campo é obrigatório";
+    errors.address.city = "Obrigatório";
   }
 
   if (!state.address.zipCode) {
-    errors.address.zipCode = "Este campo é obrigatório";
+    errors.address.zipCode = "Obrigatório";
   } else if (state.address.zipCode.length < 9) {
     errors.address.zipCode = "Formato inválido";
   }
 
   if (!state.address.street) {
-    errors.address.street = "Este campo é obrigatório";
+    errors.address.street = "Obrigatório";
   }
 
   if (!state.address.number) {
-    errors.address.number = "Este campo é obrigatório";
+    errors.address.number = "Obrigatório";
   }
 
   if (!state.address.neighborhood) {
-    errors.address.neighborhood = "Este campo é obrigatório";
+    errors.address.neighborhood = "Obrigatório";
   }
-  
+
   if (!state.address.reference) {
-    errors.address.reference = "Este campo é obrigatório";
+    errors.address.reference = "Obrigatório";
   }
 
   return errors;
