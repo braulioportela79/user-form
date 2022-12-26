@@ -31,7 +31,7 @@ export const StyledParagraph = styled.p<iStyledParagraph>`
 
   strong,
   b {
-    font-weight: 700;
+    font-weight: 500;
   }
 
   ${({ fontSize }) => {
