@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
   padding: 2.5rem;
   margin: auto;
   width: 60vw;
+  min-width: 810px;
   border: 2px solid ${({ theme }) => theme.colors.grey};
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 31px ${({ theme }) => theme.colors.grey};
@@ -24,8 +25,10 @@ export const Wrapper = styled.div`
 
 export const Steps = styled.div`
   margin: 1.2rem 0;
+  width: 95%;
   display: flex;
-  gap: 2rem;
+  justify-content: space-between;
+  gap: 1rem;
 `;
 
 export const Page = styled.div`

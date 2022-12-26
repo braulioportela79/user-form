@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
   padding: 3.5rem;
   margin: auto;
   width: 30vw;
+  min-width: 500px;
   border: 2px solid ${({ theme }) => theme.colors.grey};
   background-color: ${({ theme }) => theme.colors.white};
   box-shadow: 0px 4px 31px ${({ theme }) => theme.colors.grey};
