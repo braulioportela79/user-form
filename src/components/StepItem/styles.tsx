@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { ThemeColors } from "styles/global";
 
 export const Container = styled.div`
   display: flex;
@@ -19,23 +18,23 @@ export const IconArea = styled.div<{ step: number }>`
   #info {
     fill: ${(props) =>
       props.step === 1
-        ? `${ThemeColors.colors.purple}`
-        : props.step > 1 && `${ThemeColors.colors.green}`};
+        ? props.theme.colors.purple
+        : props.step > 1 && props.theme.colors.green};
   }
 
   #address {
     fill: ${(props) =>
       props.step === 2
-        ? `${ThemeColors.colors.purple}`
+        ? props.theme.colors.purple
         : props.step > 2
-        ? `${ThemeColors.colors.green}`
-        : props.step < 2 && `${ThemeColors.colors.darkGrey}`};
+        ? props.step > 1 && props.theme.colors.green
+        : props.step < 2 && props.theme.colors.darkGrey};
   }
 
   #about {
     fill: ${(props) =>
       props.step === 3
-        ? `${ThemeColors.colors.purple}`
-        : props.step < 3 && `${ThemeColors.colors.darkGrey}`};
+        ? props.theme.colors.purple
+        : props.step < 3 && props.theme.colors.darkGrey};
   }
 `;
