@@ -27,7 +27,7 @@ export const IconArea = styled.div<{ step: number }>`
       props.step === 2
         ? props.theme.colors.purple
         : props.step > 2
-        ? props.step > 1 && props.theme.colors.green
+        ? props.theme.colors.green
         : props.step < 2 && props.theme.colors.darkGrey};
   }
 
@@ -35,6 +35,8 @@ export const IconArea = styled.div<{ step: number }>`
     fill: ${(props) =>
       props.step === 3
         ? props.theme.colors.purple
+        : props.step > 3
+        ? props.theme.colors.green
         : props.step < 3 && props.theme.colors.darkGrey};
   }
 `;

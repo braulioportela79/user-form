@@ -80,7 +80,6 @@ export const FormStep1 = () => {
               onChange={handleChange}
               name="birthDate"
               max={today}
-              placeholder="123"
             />
             <S.Validation>
               {errors.birthDate && <span>{errors.birthDate}</span>}
